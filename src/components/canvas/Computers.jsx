@@ -33,16 +33,24 @@ const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    /* Checking if the window width is less than 500px. */
     const mediaQuery = window.matchMedia("(max-width: 500px)");
 
+    /* Setting the state of isMobile to the value of mediaQuery.matches. */
     setIsMobile(mediaQuery.matches);
 
+    /**
+     * When the media query changes, set the state of the isMobile variable to the value of the
+     * event.matches variable.
+     */
     const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 
+    /* Listening for a change in the media query and then calling the handleMediaQueryChange function. */
     mediaQuery.addEventListener("change", handleMediaQueryChange);
 
+    /* Removing the event listener. */
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
