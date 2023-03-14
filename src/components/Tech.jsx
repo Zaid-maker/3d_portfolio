@@ -8,4 +8,4 @@ const Tech = () => {
   return <div>Tech</div>;
 };
 
-export default Tech;
+export default SectionWrapper(Tech, "");
