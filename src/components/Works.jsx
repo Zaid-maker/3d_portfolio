@@ -12,4 +12,4 @@ const Works = () => {
   return <div>Works</div>;
 };
 
-export default Works;
+export default SectionWrapper(Works, "");
