@@ -4,4 +4,8 @@ const Earth = () => {
   return <div>Earth</div>;
 };
 
-export default Earth;
+const EarthCanvas = () => {
+  return <div>Earth Canvas</div>;
+};
+
+export default EarthCanvas;
