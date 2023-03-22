@@ -17,6 +17,16 @@ const Contact = () => {
 
   const [loading, setLoading] = useState(false);
 
+  const handleChange = (e) => {
+    const { target } = e;
+    const { name, value } = target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
+
   return (
     <div
       className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
@@ -36,7 +46,7 @@ const Contact = () => {
               type="text"
               name="name"
               value={form.name}
-              onChange={{}}
+              onChange={handleChange}
               placeholder="What's your good name?"
               className="bg-tertiary py- px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
@@ -48,7 +58,7 @@ const Contact = () => {
               type="email"
               name="email"
               value={form.email}
-              onChange={{}}
+              onChange={handleChange}
               placeholder="What's your email address?"
               className="bg-tertiary py- px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
@@ -60,7 +70,7 @@ const Contact = () => {
               rows={7}
               name="message"
               value={form.message}
-              onChange={{}}
+              onChange={handleChange}
               placeholder="What's you want to say?"
               className="bg-tertiary py- px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
             />
